@@ -1,4 +1,4 @@
-package com.zc.common.core.dto;
+package com.shuyu.config.response;
 
 import java.util.ArrayList;
 import java.util.Collections;

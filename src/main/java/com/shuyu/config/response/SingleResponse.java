@@ -1,4 +1,4 @@
-package com.zc.common.core.dto;
+package com.shuyu.config.response;
 
 public class SingleResponse<T> extends Response {
     private T data;

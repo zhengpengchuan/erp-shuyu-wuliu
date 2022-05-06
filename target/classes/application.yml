@@ -1,32 +1,30 @@
 # 开发环境配置
 server:
-  port: 10000
-  undertow:
-    threads:
-      io: 16
-      worker: 256
-#  servlet:
-#    context-path: /basic
+  tomcat:
+    uri-encoding: UTF-8
+  port: 10001
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=GMT%2B8&useUnicode=true&useSSL=false&characterEncoding=utf8
     username: root
     password: root
-#    type: com.alibaba.druid.pool.DruidDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      #初始化连接池大小
-      initial-size: 10
-      #最小连接池大小
-      min-idle: 10
-      #最大连接池大小
+      filters: stat,wall,log4j,config
       max-active: 100
-      #从连接池获取连接等待超时的时间
-      max-wait: 10000
-      #关闭空闲连接的检测时间间隔
+      initial-size: 1
+      max-wait: 60000
+      min-idle: 1
       time-between-eviction-runs-millis: 60000
-      #连接的最小生存时间.连接保持空闲而不被驱逐的最小时间
       min-evictable-idle-time-millis: 300000
+      validation-query: select 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 50
+      max-pool-prepared-statement-per-connection-size: 20
   # 静态文件请求匹配方式
   thymeleaf:
     mode: HTML5
@@ -43,6 +41,3 @@ spring:
     parser:
       #允许出现特殊字符和转义符
       allow_unquoted_control_chars: true
-
-mybatis-plus:
-  mapper-locations: classpath:mapper/*Mapper.xml

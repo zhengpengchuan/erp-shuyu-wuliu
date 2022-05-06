@@ -1,4 +1,4 @@
-package com.zc.common.core.dto;
+package com.shuyu.config.response;
 
 public abstract class PageQuery {
 

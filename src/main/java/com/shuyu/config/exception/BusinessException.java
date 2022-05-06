@@ -1,4 +1,4 @@
-package com.zc.common.core.exception;
+package com.shuyu.config.exception;
 
 /**
  * @program: zc-erp
@@ -6,6 +6,10 @@ package com.zc.common.core.exception;
  * @author: ransen
  * @create: 2021-03-30 09:33
  **/
+
+/***
+ * @author: 郑鹏川
+ */
 public class BusinessException extends Exception{
 
     private String errCode;

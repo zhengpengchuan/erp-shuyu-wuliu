@@ -1,4 +1,4 @@
-package com.zc.common.core.dto;
+package com.shuyu.config.response;
 
 import java.io.Serializable;
 
@@ -38,6 +38,7 @@ public class Response implements Serializable {
         this.errMessage = errMessage;
     }
 
+    @Override
     public String toString() {
         return "Response [success=" + this.success + ", errCode=" + this.errCode + ", errMessage=" + this.errMessage + "]";
     }

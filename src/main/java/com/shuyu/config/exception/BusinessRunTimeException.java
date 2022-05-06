@@ -1,4 +1,4 @@
-package com.zc.common.core.exception;
+package com.shuyu.config.exception;
 
 
 public class BusinessRunTimeException extends RuntimeException{

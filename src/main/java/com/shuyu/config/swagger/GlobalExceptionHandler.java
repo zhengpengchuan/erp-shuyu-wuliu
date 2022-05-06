@@ -1,8 +1,8 @@
-package com.shuyu.config.swaager;
+package com.shuyu.config.swagger;
 
-import com.zc.basic.common.constant.ErrorCodeEnum;
-import com.zc.common.core.dto.Response;
-import com.zc.common.core.exception.BusinessException;
+import com.shuyu.config.enums.ErrorCodeEnum;
+import com.shuyu.config.exception.BusinessException;
+import com.shuyu.config.response.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.http.HttpStatus;
@@ -30,7 +30,6 @@ public class GlobalExceptionHandler {
 	@ResponseBody
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public Response handleNotifyException(BusinessException e) {
-
 		return Response.buildFailure(e.getErrCode(), e.getErrMessage());
 	}
 
@@ -41,16 +40,13 @@ public class GlobalExceptionHandler {
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ResponseBody
 	public Response bindException(BindException e) {
-
 		log.error(e.getMessage(), e);
-
 		return Response.buildFailure(ErrorCodeEnum.PARAM_ERROR.getCode(), ErrorCodeEnum.PARAM_ERROR.getMessage());
 	}
 
 
 	/**
 	 * 处理请求参数格式错误 @RequestBody上validate失败后抛出的异常是MethodArgumentNotValidException异常。
-	 *
 	 * @param e
 	 * @return
 	 */

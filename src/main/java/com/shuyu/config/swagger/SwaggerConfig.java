@@ -1,4 +1,4 @@
-package com.shuyu.config.swaager;
+package com.shuyu.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+
     /**
      * 创建API
      */
@@ -22,7 +23,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .select()
                 //指定接口包所在路径
-                .apis(RequestHandlerSelectors.basePackage("com.zc.basic.web.api.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.shuyu.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -32,8 +33,8 @@ public class SwaggerConfig {
      */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("基础数据服务接口文档")
-                .description("basic-api-server接口文档")
+                .title("蜀玉物流服务接口文档")
+                .description("shuyu-server接口文档")
                 .version("1.0.0")
                 .build();
     }
