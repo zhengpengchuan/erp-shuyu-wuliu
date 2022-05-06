@@ -15,6 +15,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -94,7 +99,7 @@
       <workItem from="1651718446533" duration="1562000" />
       <workItem from="1651720209928" duration="4155000" />
       <workItem from="1651725057858" duration="1563000" />
-      <workItem from="1651740441298" duration="3949000" />
+      <workItem from="1651740441298" duration="4454000" />
     </task>
     <servers />
   </component>
